@@ -1,15 +1,15 @@
-from tkinter import *
+import tkinter
 
 
-root = Tk()
-root.title("Alarm")
-root.geometry("200x200+100+100")
-root.resizable(False, False)
+alarm = tkinter.Tk()
+alarm.title("Alarm")
+alarm.geometry("200x200+100+100")
+alarm.resizable(False, False)
 
-label = Label(root, text='\n\nGood Morning!\n\n')
+label = tkinter.Label(alarm, text='\n\nGood Morning!\n\n')
 label.pack()
 
-button = Button(root, width = 20, height = 5 , text = "알람 끄기", overrelief="solid", command = quit)
+button = tkinter.Button(alarm, width = 20, height = 5 , text = "알람 끄기", overrelief="solid", command = alarm.quit)
 button.pack()
 
-root.mainloop()
+alarm.mainloop()
