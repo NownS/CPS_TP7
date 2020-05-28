@@ -1,5 +1,6 @@
-import tkinter
+## 알람이 울릴 때 실행되는 파일
 
+import tkinter
 
 alarm = tkinter.Tk()
 alarm.title("Alarm")
