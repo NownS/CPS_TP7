@@ -59,6 +59,7 @@ entry.place(x=65,y=110)
 
 label = tkinter.Label(root, text="")
 label.place(x=40,y=130)
+label.config(text="ex) 23:59:59, press enter")
 
 t = threading.Thread(target = clockcount, args=())
 t.start()                                        #알람 백그라운드 실행
