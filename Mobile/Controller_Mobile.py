@@ -21,15 +21,16 @@ def alarm_timeset(event):
         minute = int(minute)
         sec = int(sec)
 
-#------------------------알람 기록 프로세스------------------------------#
 
 def clockcount():
     while (1):
         today = datetime.today()
         if(hour == today.hour and minute == today.minute and sec == today.second):
             subprocess.run(["python", "Alarm.py"])
+            label.config(text="ex) 23:59:59, press enter")
         time.sleep(1)
 
+#------------------------알람 타이머 프로세스------------------------------#
 
 
 def onclick(process):
@@ -44,13 +45,13 @@ button1 = tkinter.Button(root, width = 11, height = 4 , text = "Alarm", overreli
 button1.place(x=50, y=30)
 button2 = tkinter.Button(root, width = 11, height = 4 , text = "Game", overrelief="solid", command = lambda: onclick("Game.py"))
 button2.place(x=170, y=30)
-button3 = tkinter.Button(root, width = 11, height = 4 , text = "Messenger", overrelief="solid", command = lambda: onclick("Game.py"))
+button3 = tkinter.Button(root, width = 11, height = 4 , text = "Note", overrelief="solid", command = lambda: onclick("Note.py"))
 button3.place(x=50, y=150)
-button4 = tkinter.Button(root, width = 11, height = 4 , text = "Music", overrelief="solid", command = lambda: onclick("Game.py"))
+button4 = tkinter.Button(root, width = 11, height = 4 , text = "Music", overrelief="solid", command = lambda: onclick("Music.py"))
 button4.place(x=170, y=150)
-button5 = tkinter.Button(root, width = 11, height = 4 , text = "Training", overrelief="solid", command = lambda: onclick("Game.py"))
+button5 = tkinter.Button(root, width = 11, height = 4 , text = "Training", overrelief="solid", command = lambda: onclick("Training.py"))
 button5.place(x=50, y=270)
-button6 = tkinter.Button(root, width = 11, height = 4 , text = "Video", overrelief="solid", command = lambda: onclick("Game.py"))
+button6 = tkinter.Button(root, width = 11, height = 4 , text = "Video", overrelief="solid", command = lambda: onclick("Video.py"))
 button6.place(x=170, y=270)
 
 entry = tkinter.Entry(root, width = 7)
