@@ -38,7 +38,7 @@ def onclick(process):
 
 root = tkinter.Tk()
 root.title("Mobile Phone")
-root.geometry("300x400")
+root.geometry("300x400+100+100")
 root.resizable(False, False)
 
 button1 = tkinter.Button(root, width = 11, height = 4 , text = "Alarm", overrelief="solid", command = lambda: onclick("Alarm.py"))
