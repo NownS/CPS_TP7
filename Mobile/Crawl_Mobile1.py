@@ -13,7 +13,8 @@ class Crawler():
         self.index = 0
 
     def Crawling(self):
-        threading.Timer(2,self.Crawling).start()
+        print(".",end="")
+        threading.Timer(1.0,self.Crawling).start()
         self.Write(list(self.pflag.values()))
         process = psutil.pids()
         for p in process:
@@ -45,5 +46,8 @@ if(__name__ == "__main__"):
     wr = csv.writer(f)
     wr.writerow(["INDEX", "DATE", "TIME", "Controller", "Alarm", "Game", "Music", "Note", "Training", "Video"])
     f.close()
+    print("Process Crawler")
+    print("If you shut down, press Ctrl + c")
+    print("Crawl Processing...",end="")
     mobile = Crawler()
     mobile.Crawling()

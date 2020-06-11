@@ -1,0 +1,6 @@
+subpocess.run 함수를 사용하니 메인 프로세스가 죽는 현상 발생
+subprocess.Popen 함수를 이용하여 포크하더라도 기존의 부모 프로세스가 잘 실행되도록 만듬, 여러 프로세스 실행 가능
+
+threading을 사용하니 High level의 스레딩을 사용하여 문제 발생
+Multiprocessing으로 변경
+Multiprocessing으로 변경하고자 했으나 timer에 대응되는 함수가 없어서 다시 threading 사용, 중간에 오류로 인해 빈 공간은 데이터 전처리를 진행
