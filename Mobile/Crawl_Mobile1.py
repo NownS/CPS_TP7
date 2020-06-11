@@ -2,6 +2,7 @@
 import psutil
 import time
 import csv
+import threading
 
 class Crawler():
     def __init__(self):
@@ -11,23 +12,25 @@ class Crawler():
         self.index = 1
 
     def Crawling(self):
-            for p in psutil.pids():
-                try:
-                    pro = psutil.Process(p)
-                    for i in self.pname:
-                        if(self.pid[i]):
-                            if(self.pid[i] not in psutil.pids()):
-                                self.pflag[i] = 0
-                                self.pid[i] = 0
-                                self.Write(i, 0)
-                                continue
+        threading.Timer(1,self.Crawling).start()
+        process = psutil.pids()
+        for p in process:
+            try:
+                pro = psutil.Process(p)
+                for i in self.pname:
+                    if(self.pid[i]):
+                        if(self.pid[i] not in process):
+                            self.pflag[i] = 0
+                            self.pid[i] = 0
+                            self.Write(i, 0)
+                            continue
                             
-                        if(pro.name() == "python.exe" and i == pro.cmdline()[1] and not self.pflag[i]):
-                            self.pflag[i]=1
-                            self.pid[i]=pro.pid
-                            self.Write(i, 1)
-                except:
-                    continue
+                    if(pro.name() == "python.exe" and i == pro.cmdline()[1] and not self.pflag[i]):
+                        self.pflag[i]=1
+                        self.pid[i]=pro.pid
+                        self.Write(i, 1)
+            except:
+                continue
 
     def Write(self,name,flag):
         f = open('mobile_data.csv','a',encoding = 'utf-8', newline ='')
@@ -38,6 +41,4 @@ class Crawler():
 
 if(__name__ == "__main__"):
     mobile = Crawler()
-    while(1):
-        mobile.Crawling()
-        time.sleep(1)
+    mobile.Crawling()

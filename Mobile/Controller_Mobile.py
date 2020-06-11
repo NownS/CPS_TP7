@@ -34,7 +34,7 @@ def clockcount():
 
 
 def onclick(process):
-    subprocess.run(["python", process])
+    subprocess.Popen(["python", process])
 
 root = tkinter.Tk()
 root.title("Mobile Phone")
