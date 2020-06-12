@@ -37,7 +37,7 @@ class Crawler():
 
     def Write(self,flag):
         date = datetime.datetime.now().date()
-        f = open('mobile_data_Crawling_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),
+        f = open('Mobile_data_Crawling_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),
         'a',encoding = 'utf-8', newline ='')
         wr = csv.writer(f)
         tm = datetime.datetime.now()
@@ -50,12 +50,12 @@ class Crawler():
 
 if(__name__ == "__main__"):
     date = datetime.datetime.now().date()
-    f = open('mobile_data_Crawling_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
+    f = open('Mobile_data_Crawling_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
     wr = csv.writer(f)
-    wr.writerow(["INDEX", "DATE", "TIME", "Interval", "Controller", "Alarm", "Game", "Music", "Note", "Training", "Video"])
+    wr.writerow(["INDEX", "DATE", "TIME", "Interval", "Mobile_Controller", "Alarm", "Game", "Music", "Note", "Training", "Video"])
     f.close()
     print("Process Crawler")
-    print("If you shut down, press Ctrl + c")
+    print("If you shut down, press Ctrl + z")
     print("Crawl Processing...",end="")
     mobile = Crawler()
     mobile.Crawling()

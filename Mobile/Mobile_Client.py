@@ -5,7 +5,7 @@ from datetime import datetime
 HOST = "127.0.0.1"
 PORT = 8080
 Buff_SIZE = 1024
-Filename = 'mobile_data_Crawling_{0}{1:02d}{2:02d}.csv'.format(datetime.now().year,datetime.now().month,datetime.now().day-1)
+Filename = 'Mobile_data_Crawling_{0}{1:02d}{2:02d}.csv'.format(datetime.now().year,datetime.now().month,datetime.now().day-1)
 
 def getFileSize(fileName, directory):
         fileSize = os.path.getsize(directory+"\\"+fileName)
