@@ -36,7 +36,9 @@ class Crawler():
                 continue
 
     def Write(self,flag):
-        f = open('mobile_data.csv','a',encoding = 'utf-8', newline ='')
+        date = datetime.datetime.now().date()
+        f = open('mobile_data_Crawling_{0}{1}{2}.csv'.format(date.year,date.month,date.day),
+        'a',encoding = 'utf-8', newline ='')
         wr = csv.writer(f)
         tm = datetime.datetime.now()
         tmnow = datetime.datetime.now().time()
@@ -47,7 +49,8 @@ class Crawler():
         self.index += 1
 
 if(__name__ == "__main__"):
-    f = open('mobile_data.csv','w',encoding = 'utf-8', newline ='')
+    date = datetime.datetime.now().date()
+    f = open('mobile_data_Crawling_{0}{1}{2}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
     wr = csv.writer(f)
     wr.writerow(["INDEX", "DATE", "TIME", "Interval", "Controller", "Alarm", "Game", "Music", "Note", "Training", "Video"])
     f.close()
