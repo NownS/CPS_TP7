@@ -2,6 +2,8 @@
 import psutil
 import time
 import csv
+import datetime
+import os
 
 class Crawler():
     def __init__(self):
@@ -30,7 +32,7 @@ class Crawler():
                     continue
 
     def Write(self,name,flag):
-        f = open('mobile_data_timing.csv','a',encoding = 'utf-8', newline ='')
+        f = open('Mobile_data_event_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
         wr = csv.writer(f)
         tm = time.localtime(time.time())
         wr.writerow([self.index, name, time.strftime('%c', tm),"{0:02d}:{1:02d}:{2:02d}".format(tm.tm_hour,tm.tm_min,tm.tm_sec), flag])
@@ -38,6 +40,15 @@ class Crawler():
 
 if(__name__ == "__main__"):
     mobile = Crawler()
+    date = datetime.datetime.now().date()
+    f = open('Mobile_data_event_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
+    wr = csv.writer(f)
+    wr.writerow(["INDEX", "DATE", "TIME", "Interval", "Alarm", "Game", "Music", "Note", "Training", "Video"])
+    f.close()
+    print("Process Crawler")
+    print("If you shut down, press Ctrl + z")
+    print("Crawl Processing...",end="")
     while(1):
         mobile.Crawling()
+        print(".",end="")
         time.sleep(1) 
