@@ -34,7 +34,28 @@ def MergeList(list1, list2):
             list3.append(copy.deepcopy(tmp))
             index[1] = index[1] + 1
             index[2] = index[2] + 1
-    
+
+    if(index[0] == list1_len):
+        while(index[1] == list2_len):
+            tmp = []
+            tmp.append(index[2])
+            tmp = (tmp + list2[index[1]][1:4] + 
+            list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]) + 
+            list2[index[1]][4:])
+            list3.append(copy.deepcopy(tmp))
+            index[1] = index[1] + 1
+            index[2] = index[2] + 1
+
+    else:
+        while(index[0] == list1_len):
+            tmp = []
+            tmp.append(index[2])
+            tmp = (tmp + list1[index[0]][1:] + 
+            list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]))
+            list3.append(copy.deepcopy(tmp))
+            index[0] = index[0] + 1
+            index[2] = index[2] + 1
+
     return list3
 
 tm = datetime.datetime.now()

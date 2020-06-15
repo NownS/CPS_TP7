@@ -15,7 +15,7 @@ class Crawler():
         self.index = 0
 
     def Crawling(self):
-        threading.Timer(5,self.Crawling).start()
+        threading.Timer(1,self.Crawling).start()
         self.Write(list(self.pflag.values()))
         process = psutil.pids()
         for p in process:
