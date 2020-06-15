@@ -4,13 +4,13 @@ import tkinter
 
 root = tkinter.Tk()
 root.title("Game")
-root.geometry("500x200+100+100")
+root.geometry("200x200+200+100")
 root.resizable(False, False)
 
 label = tkinter.Label(root, text='\nGames\n')
 label.pack()
 
-button1 = tkinter.Button(root, width = 20, text = "게임 종료", overrelief="solid", command = quit)
+button1 = tkinter.Button(root, height = 7, width = 20, text = "게임 종료", overrelief="solid", command = quit)
 button1.pack()
 
 root.mainloop()

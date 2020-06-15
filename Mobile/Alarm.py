@@ -4,7 +4,7 @@ import tkinter
 
 alarm = tkinter.Tk()
 alarm.title("Alarm")
-alarm.geometry("200x200+100+100")
+alarm.geometry("200x200+0+100")
 alarm.resizable(False, False)
 
 label = tkinter.Label(alarm, text='\n\nGood Morning!\n\n')
