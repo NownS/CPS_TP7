@@ -18,10 +18,9 @@ def MergeList(list1, list2):
             index[1] = index[1] + 1
             index[2] = index[2] + 1
         
-        elif(list1[index[0]][3] > list2[index[1]][3]):
+        elif(int(list1[index[0]][3]) < int(list2[index[1]][3])):
             tmp.append(index[2])
-            tmp = (tmp + list1[index[0]][1:] + 
-            list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]))
+            tmp = (tmp + list1[index[0]][1:] + list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]))
             list3.append(copy.deepcopy(tmp))
             index[0] = index[0] + 1
             index[2] = index[2] + 1
@@ -29,29 +28,25 @@ def MergeList(list1, list2):
         else:
             tmp.append(index[2])
             tmp = (tmp + list2[index[1]][1:4] + 
-            list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]) + 
-            list2[index[1]][4:])
+            list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]) + list2[index[1]][4:])
             list3.append(copy.deepcopy(tmp))
             index[1] = index[1] + 1
             index[2] = index[2] + 1
 
     if(index[0] == list1_len):
-        while(index[1] == list2_len):
+        while(index[1] != list2_len):
             tmp = []
             tmp.append(index[2])
-            tmp = (tmp + list2[index[1]][1:4] + 
-            list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]) + 
-            list2[index[1]][4:])
+            tmp = (tmp + list2[index[1]][1:4] + list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]) + list2[index[1]][4:])
             list3.append(copy.deepcopy(tmp))
             index[1] = index[1] + 1
             index[2] = index[2] + 1
 
     else:
-        while(index[0] == list1_len):
+        while(index[0] != list1_len):
             tmp = []
             tmp.append(index[2])
-            tmp = (tmp + list1[index[0]][1:] + 
-            list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]))
+            tmp = (tmp + list1[index[0]][1:] + list(["NULL", "NULL", "NULL", "NULL", "NULL", "NULL", "NULL"]))
             list3.append(copy.deepcopy(tmp))
             index[0] = index[0] + 1
             index[2] = index[2] + 1
