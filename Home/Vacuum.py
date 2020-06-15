@@ -4,13 +4,13 @@ import tkinter
 
 root = tkinter.Tk()
 root.title("Vacuum")
-root.geometry("500x200+100+100")
+root.geometry("200x200+1000+600")
 root.resizable(False, False)
 
 label = tkinter.Label(root, text='\nVacuum\n')
 label.pack()
 
-button1 = tkinter.Button(root, width = 20, text = "컨트롤러 종료", overrelief="solid", command = quit)
+button1 = tkinter.Button(root, height = 7, width = 20, text = "컨트롤러 종료", overrelief="solid", command = quit)
 button1.pack()
 
 root.mainloop()

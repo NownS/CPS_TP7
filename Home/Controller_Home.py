@@ -10,7 +10,7 @@ def onclick(process):
 
 root = tkinter.Tk()
 root.title("Home")
-root.geometry("300x400+100+100")
+root.geometry("300x400+700+100")
 root.resizable(False, False)
 
 button1 = tkinter.Button(root, width = 11, height = 4 , text = "AirConditioner", overrelief="solid", command = lambda: onclick("AirConditioner.py"))
