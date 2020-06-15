@@ -1,4 +1,4 @@
-# 모바일 기기에서 프로세스 크롤링, 꾸준히 크롤링
+# 홈 기기에서 프로세스 크롤링, 꾸준히 크롤링
 import psutil
 import time
 import csv
