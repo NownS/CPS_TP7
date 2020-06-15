@@ -32,7 +32,7 @@ class Crawler():
                     continue
 
     def Write(self,name,flag):
-        f = open('Mobile_data_event_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
+        f = open('Mobile_data_event_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'a',encoding = 'utf-8', newline ='')
         wr = csv.writer(f)
         tm = time.localtime(time.time())
         wr.writerow([self.index, name, time.strftime('%c', tm),"{0:02d}:{1:02d}:{2:02d}".format(tm.tm_hour,tm.tm_min,tm.tm_sec), flag])
