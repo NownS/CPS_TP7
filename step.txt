@@ -1,9 +1,8 @@
-
-
 subpocess.run 함수를 사용하니 메인 프로세스가 죽는 현상 발생
 subprocess.Popen 함수를 이용하여 포크하더라도 기존의 부모 프로세스가 잘 실행되도록 만듬, 여러 프로세스 실행 가능
 
 threading을 사용하니 High level의 스레딩을 사용하여 문제 발생
 Multiprocessing으로 변경
 Multiprocessing으로 변경하고자 했으나 timer에 대응되는 함수가 없어서 Multiprocessing 중 Timer 구현된 라이브러리 사용, 그러나 Multiprocessing으로 사용시 CSV 파일이 이중으로 open되어 문제 발생, 하나의 프로그램을 타임쉐어링을 통해 사용하는 Threading 모듈로 다시 변경, 타임쉐어링 이슈로 인해 중간에 1초씩 부족해지는 오류 문제는 이후 전처리를 통해 해결하기로 결정
+
 Crawl_Mobile을 2개로 나눔, 1번은 연속된 데이터, 2번은 이벤트 발생 시 기록하는 데이터
