@@ -45,7 +45,7 @@ if(__name__ == "__main__"):
     date = datetime.datetime.now().date()
     f = open('Mobile_data_event_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
     wr = csv.writer(f)
-    wr.writerow(["INDEX", "DATE", "TIME", "Interval", "Alarm", "Game", "Music", "Note", "Training", "Video"])
+    wr.writerow(["INDEX", "Name", "TIME", "Interval", "Flag"])
     f.close()
     print("Process Crawler")
     print("If you shut down, press Ctrl + z")

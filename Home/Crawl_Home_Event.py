@@ -37,8 +37,7 @@ class Crawler():
         tm = time.localtime(time.time())
         tmnow = datetime.datetime.now().time()
         tminterval = tmnow.hour * 3600 + tmnow.minute * 60 + tmnow.second
-        wr.writerow([self.index, name, "{0:04d}/{1:02d}/{2:02d}".format(tm.year,tm.month, tm.day),
-        "{0:02d}:{1:02d}:{2:02d}".format(tm.hour,tm.minute,tm.second), tminterval, flag])
+        wr.writerow([self.index, name, "{0:02d}:{1:02d}:{2:02d}".format(tm.tm_hour,tm.tm_min,tm.tm_sec), tminterval, flag])
         self.index += 1
 
 if(__name__ == "__main__"):
@@ -46,7 +45,7 @@ if(__name__ == "__main__"):
     date = datetime.datetime.now().date()
     f = open('Mobile_data_event_{0}{1:02d}{2:02d}.csv'.format(date.year,date.month,date.day),'w',encoding = 'utf-8', newline ='')
     wr = csv.writer(f)
-    wr.writerow(["INDEX", "Name", "Date", "Time", "Interval", "Flag"])
+    wr.writerow(["INDEX", "Name", "TIME", "Interval", "Flag"])
     f.close()
     print("Process Crawler")
     print("If you shut down, press Ctrl + z")
