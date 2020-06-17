@@ -54,7 +54,7 @@ def MergeList(list1, list2):
     return list3
 
 tm = datetime.datetime.now()
-yesterday = "{0}{1:02d}{2:02d}".format(tm.year,tm.month,tm.day-1)
+yesterday = "{0}{1:02d}{2:02d}".format(tm.year,tm.month,tm.day)
 hname = "Home_data_Linear_{}.csv".format(yesterday)
 f_home = open(hname,"r", encoding = "UTF-8", newline = '')
 mname = "Mobile_data_Linear_{}.csv".format(yesterday)
