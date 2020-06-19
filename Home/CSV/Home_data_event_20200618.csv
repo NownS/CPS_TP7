@@ -1,0 +1,7 @@
+INDEX,Name,TIME,Interval,Flag
+1,Lamp.py,10:45:46,38746,1
+2,TV.py,10:45:50,38750,1
+3,TV.py,10:45:54,38754,0
+4,Lamp.py,10:45:56,38756,0
+5,DoorLock.py,10:45:59,38759,1
+6,DoorLock.py,10:46:00,38760,0
